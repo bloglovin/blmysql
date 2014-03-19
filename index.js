@@ -58,7 +58,7 @@ Db.prototype.select = function select(query, data, cb) {
 
     con.execute(query, data, function(err, result, fields) {
       cb(err, result, fields);
-      con.end();
+      con.release();
     });
   });
 };
@@ -113,7 +113,7 @@ Db.prototype.write = function write(query, data, cb) {
 
     con.execute(query, data, function(err, result) {
       cb(err, result);
-      con.end();
+      con.release();
     });
   });
 };
