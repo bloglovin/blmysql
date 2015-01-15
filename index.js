@@ -28,7 +28,7 @@ var Db = function (config) {
 //
 Db.prototype._getConnection = function (cb) {
   this.db.getConnection(cb);
-}
+};
 
 //
 // ## Select
@@ -93,7 +93,7 @@ Db.prototype.stream = function stream(query, data, rowHandler, finishHandler) {
       finishHandler(save_err);
     });
   });
-}
+};
 
 //
 // ## Write
@@ -120,4 +120,4 @@ Db.prototype.write = function write(query, data, cb) {
 
 module.exports = function (config) {
   return new Db(config);
-}
+};
