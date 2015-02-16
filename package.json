@@ -1,6 +1,7 @@
 {
   "name": "blmysql",
   "version": "1.0.0",
+  "private": true,
   "description": "Wrapper for mysql2 with bloglovin defaults",
   "main": "index.js",
   "scripts": {
