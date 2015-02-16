@@ -63,8 +63,8 @@ Db.prototype.select = function select(query, data, cb) {
     }
 
     con.execute(query, data, function(err, result, fields) {
-      cb(err, result, fields);
       con.release();
+      cb(err, result, fields);
     });
   });
 };
