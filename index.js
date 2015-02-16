@@ -51,6 +51,12 @@ Db.prototype._getConnection = function (cb) {
 // * **cb** function (err, result, fields)
 //
 Db.prototype.select = function select(query, data, cb) {
+  // Allow optional data param
+  if (typeof data === 'function') {
+    cb = data;
+    data = [];
+  }
+
   this._getConnection(function (err, con) {
     if (err) {
       return cb(err, null);
